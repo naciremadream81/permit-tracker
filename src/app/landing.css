@@ -1,6 +1,4 @@
-/* ── Marketing landing (brand register) ───────────────────────
-   Committed steel-teal on pure white; brass only on deadline preview.
-   List-led composition — no SaaS card grid. */
+/* ── Marketing landing ─────────────────────────────────────── */
 
 .landing {
   --landing-max: 68rem;
@@ -64,11 +62,10 @@
   min-height: 40px;
 }
 
-/* Drenched hero — the surface IS the brand color. Committed steel-teal,
-   identical in light and dark mode; the preview panel floats on it. */
+/* Dark hero — near-black surface identical in light and dark mode. */
 
 .landing-hero-band {
-  background: oklch(0.38 0.085 215);
+  background: #09090b;
 }
 
 .landing-hero {
@@ -84,53 +81,55 @@
 .landing-eyebrow {
   font-size: var(--text-sm);
   font-weight: 500;
-  color: oklch(0.82 0.06 205);
-  letter-spacing: 0.02em;
+  color: #6b7280;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   margin-bottom: var(--sp-3);
 }
 
 .landing-hero h1 {
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 600;
-  line-height: 1.12;
+  font-weight: 700;
+  line-height: 1.08;
   letter-spacing: -0.03em;
   text-wrap: balance;
   max-width: 14ch;
-  color: oklch(0.985 0.004 210);
+  color: #fafafa;
 }
 
 .landing-lead {
   margin-top: var(--sp-5);
   font-size: clamp(var(--text-md), 1.8vw, 1.0625rem);
   line-height: 1.65;
-  color: oklch(0.88 0.025 210);
+  color: #71717a;
   max-width: 42ch;
 }
 
-/* CTAs on the drench: white carries the action, outline carries the alternative. */
+/* CTAs on the dark hero: white primary, zinc outline secondary. */
 .landing-hero .btn-primary {
-  background: oklch(0.985 0.004 210);
-  color: oklch(0.34 0.085 215);
+  background: #fafafa;
+  color: #09090b;
 }
 
 .landing-hero .btn-primary:hover {
-  background: oklch(0.93 0.015 210);
+  background: #e4e4e7;
 }
 
 .landing-hero .btn-secondary {
   background: transparent;
-  border-color: oklch(0.985 0.004 210 / 0.45);
-  color: oklch(0.985 0.004 210);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fafafa;
 }
 
 .landing-hero .btn-secondary:hover {
-  border-color: oklch(0.985 0.004 210);
-  color: oklch(0.985 0.004 210);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fafafa;
 }
 
 .landing-hero .btn-primary:focus-visible,
 .landing-hero .btn-secondary:focus-visible {
-  outline-color: oklch(0.985 0.004 210);
+  outline-color: #fafafa;
 }
 
 .landing-cta-wrap {
@@ -147,7 +146,7 @@
 }
 
 .landing-hero .landing-cta-error {
-  color: oklch(0.92 0.05 40);
+  color: #fca5a5;
 }
 
 .landing-hero-actions {
@@ -164,11 +163,11 @@
 }
 
 .landing-preview {
-  border: 1px solid oklch(1 0 0 / 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   background: var(--bg);
   overflow: hidden;
-  box-shadow: 0 24px 64px oklch(0.18 0.05 220 / 0.45);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
 }
 
 .landing-preview-chrome {

@@ -36,7 +36,7 @@ export default function LandingPage() {
       <section className="landing-hero" aria-labelledby="landing-hero-title">
         <div className="landing-hero-copy">
           <p className="landing-eyebrow">For Florida permit expeditors</p>
-          <h1 id="landing-hero-title">Every permit package. One calm view.</h1>
+          <h1 id="landing-hero-title">Permit logic.<br />Not paperwork.</h1>
           <p className="landing-lead">
             Meridian is the portfolio instrument for tracking submissions across
             counties — status, checklists, contractors, and deadlines without

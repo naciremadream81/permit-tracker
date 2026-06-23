@@ -33,7 +33,6 @@ export function Shell({ children }: { children: ReactNode }) {
 
   const isMarketing = pathname === "/";
 
-  // Cloud mode requires sign-in before showing workspace data.
   if (cloudEnabled && authReady && !user) {
     if (isMarketing) {
       return (
@@ -43,7 +42,7 @@ export function Shell({ children }: { children: ReactNode }) {
       );
     }
     return (
-      <div className="shell">
+      <div className="shell shell--centered">
         <div className="signin-screen">
           <Compass size={28} strokeWidth={1.75} aria-hidden />
           <h1>Meridian</h1>
@@ -79,13 +78,12 @@ export function Shell({ children }: { children: ReactNode }) {
 
   return (
     <div className="shell">
-      <header className="topbar">
-        <Link href="/" className="brand" title="Meridian home">
-          <Compass size={20} strokeWidth={1.75} aria-hidden />
-          <span>Meridian</span>
-          <span className="brand-sub">Permit Tracker</span>
+      <aside className="sidebar" aria-label="Application navigation">
+        <Link href="/" className="sidebar-brand" title="Meridian home">
+          <Compass size={22} strokeWidth={1.5} aria-hidden />
         </Link>
-        <nav aria-label="Primary" className="topnav">
+
+        <nav className="sidebar-nav" aria-label="Primary">
           {NAV.map(({ href, label, icon: Icon }) => {
             const active =
               href === "/packages"
@@ -95,52 +93,54 @@ export function Shell({ children }: { children: ReactNode }) {
               <Link
                 key={href}
                 href={href}
-                className="topnav-link"
+                className="sidebar-link"
                 aria-current={active ? "page" : undefined}
                 title={label}
+                data-label={label}
               >
-                <Icon size={15} strokeWidth={2} aria-hidden />
-                <span className="topnav-label">{label}</span>
+                <Icon size={18} strokeWidth={1.75} aria-hidden />
+                <span className="sr-only">{label}</span>
               </Link>
             );
           })}
         </nav>
-        <button
-          type="button"
-          className="icon-btn"
-          onClick={toggleTheme}
-          aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {dark ? <Sun size={17} aria-hidden /> : <Moon size={17} aria-hidden />}
-        </button>
-        {cloudEnabled && user && (
-          <div className="account">
-            <span className="account-email" title={user.email ?? undefined}>
-              {user.email}
-            </span>
+
+        <div className="sidebar-foot">
+          <button
+            type="button"
+            className="sidebar-icon-btn"
+            onClick={toggleTheme}
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {dark ? <Sun size={17} aria-hidden /> : <Moon size={17} aria-hidden />}
+          </button>
+          {cloudEnabled && user && (
             <button
               type="button"
-              className="icon-btn"
+              className="sidebar-icon-btn sidebar-icon-btn--danger"
               onClick={() => void signOut()}
               aria-label="Sign out"
             >
               <LogOut size={16} aria-hidden />
             </button>
-          </div>
-        )}
-      </header>
-      {cloudError && (
-        <div className="cloud-banner" role="alert">
-          <CloudAlert size={15} strokeWidth={2} aria-hidden />
-          <span className="cloud-banner-text">{cloudError}</span>
-          {cloudEnabled && user && (
-            <button type="button" className="btn-secondary btn-sm cloud-banner-retry" onClick={retryCloudSync}>
-              Retry sync
-            </button>
           )}
         </div>
-      )}
-      <main className="main">{children}</main>
+      </aside>
+
+      <div className="shell-body">
+        {cloudError && (
+          <div className="cloud-banner" role="alert">
+            <CloudAlert size={15} strokeWidth={2} aria-hidden />
+            <span className="cloud-banner-text">{cloudError}</span>
+            {cloudEnabled && user && (
+              <button type="button" className="btn-secondary btn-sm cloud-banner-retry" onClick={retryCloudSync}>
+                Retry sync
+              </button>
+            )}
+          </div>
+        )}
+        <main className="main">{children}</main>
+      </div>
     </div>
   );
 }
