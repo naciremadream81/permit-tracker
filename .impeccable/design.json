@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-10T08:30:00Z",
+  "title": "Design System: Meridian — Permit Package Tracker",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Steel Teal", "canonical": "oklch(0.55 0.091 210)", "tonalRamp": ["oklch(0.18 0.06 210)", "oklch(0.28 0.08 210)", "oklch(0.38 0.09 210)", "oklch(0.49 0.095 210)", "oklch(0.55 0.091 210)", "oklch(0.68 0.085 210)", "oklch(0.82 0.05 210)", "oklch(0.945 0.022 210)"] },
+      "accent": { "role": "secondary", "displayName": "Brass", "canonical": "oklch(0.62 0.10 75)", "tonalRamp": ["oklch(0.22 0.06 75)", "oklch(0.32 0.08 75)", "oklch(0.42 0.09 72)", "oklch(0.50 0.10 70)", "oklch(0.62 0.10 75)", "oklch(0.74 0.10 80)", "oklch(0.86 0.06 80)", "oklch(0.955 0.028 80)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(0.235 0.018 230)", "tonalRamp": ["oklch(0.165 0.012 230)", "oklch(0.235 0.018 230)", "oklch(0.35 0.02 228)", "oklch(0.47 0.022 225)", "oklch(0.60 0.018 225)", "oklch(0.80 0.012 220)", "oklch(0.885 0.008 220)", "oklch(0.972 0.004 220)"] },
+      "bg": { "role": "neutral", "displayName": "Pure White", "canonical": "oklch(1 0 0)", "tonalRamp": ["oklch(0.165 0.012 230)", "oklch(0.30 0.015 230)", "oklch(0.47 0.022 225)", "oklch(0.60 0.018 225)", "oklch(0.80 0.012 220)", "oklch(0.885 0.008 220)", "oklch(0.972 0.004 220)", "oklch(1 0 0)"] },
+      "status-corrections": { "role": "tertiary", "displayName": "Correction Orange", "canonical": "oklch(0.55 0.13 45)", "tonalRamp": ["oklch(0.25 0.07 45)", "oklch(0.35 0.10 45)", "oklch(0.45 0.12 45)", "oklch(0.55 0.13 45)", "oklch(0.66 0.12 48)", "oklch(0.76 0.11 50)", "oklch(0.87 0.07 52)", "oklch(0.955 0.030 55)"] },
+      "status-approved": { "role": "tertiary", "displayName": "Approval Green", "canonical": "oklch(0.52 0.11 155)", "tonalRamp": ["oklch(0.22 0.06 155)", "oklch(0.32 0.08 155)", "oklch(0.42 0.10 155)", "oklch(0.52 0.11 155)", "oklch(0.64 0.11 155)", "oklch(0.76 0.10 155)", "oklch(0.87 0.06 155)", "oklch(0.95 0.035 155)"] }
+    },
+    "typographyMeta": {
+      "title": { "displayName": "Title", "purpose": "Page titles and client names; the largest text in the app." },
+      "headline": { "displayName": "Headline", "purpose": "Section and card headings." },
+      "body": { "displayName": "Body", "purpose": "Default UI text at 0.875rem / 1.55." },
+      "label": { "displayName": "Label", "purpose": "Pills, chips, metadata, form labels; tabular numerals via .tnum for data." }
+    },
+    "shadows": [
+      { "name": "shadow-lg", "value": "0 12px 32px oklch(0.25 0.02 230 / 0.16)", "purpose": "Overlay tier only — slide-in panels, dialogs." },
+      { "name": "shadow-sm", "value": "0 1px 2px oklch(0.25 0.02 230 / 0.06)", "purpose": "Rare ambient lift; never on resting content." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for all state transitions." },
+      { "name": "dur-fast", "value": "140ms", "purpose": "Hover and color shifts." },
+      { "name": "dur-base", "value": "200ms", "purpose": "Panel slide-in, progress bar width." }
+    ],
+    "breakpoints": [
+      { "name": "stack-detail", "value": "860px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Steel-teal filled action button — one per view.",
+      "html": "<button class=\"ds-btn-primary\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg>New package</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 6px; background: oklch(0.55 0.091 210); color: oklch(0.99 0.005 210); padding: 8px 14px; border: none; border-radius: 8px; font: 500 0.875rem/1.55 Inter, system-ui, sans-serif; cursor: pointer; transition: background 140ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: oklch(0.49 0.095 210); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(0.55 0.091 210); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Bordered white button for status moves and secondary actions.",
+      "html": "<button class=\"ds-btn-secondary\">Mark submitted</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 6px; background: oklch(1 0 0); color: oklch(0.235 0.018 230); padding: 8px 14px; border: 1px solid oklch(0.80 0.012 220); border-radius: 8px; font: 500 0.875rem/1.55 Inter, system-ui, sans-serif; cursor: pointer; transition: border-color 140ms, color 140ms; } .ds-btn-secondary:hover { border-color: oklch(0.55 0.091 210); color: oklch(0.55 0.091 210); } .ds-btn-secondary:focus-visible { outline: 2px solid oklch(0.55 0.091 210); outline-offset: 2px; }"
+    },
+    {
+      "name": "Status Pill",
+      "kind": "chip",
+      "refersTo": "status-pill",
+      "description": "Permit lifecycle status — icon + label + tinted hue, never color alone.",
+      "html": "<span class=\"ds-pill-corrections\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><path d=\"M14 2v6h6M12 11v4M12 18h.01\"/></svg>Corrections</span>",
+      "css": ".ds-pill-corrections { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; font: 500 0.75rem/1.3 Inter, system-ui, sans-serif; color: oklch(0.55 0.13 45); background: oklch(0.955 0.030 55); white-space: nowrap; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Standard form field with hover and focus treatments.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Company or contractor name\" />",
+      "css": ".ds-input { padding: 8px 11px; border: 1px solid oklch(0.80 0.012 220); border-radius: 8px; background: oklch(1 0 0); color: oklch(0.235 0.018 230); font: 400 0.875rem/1.55 Inter, system-ui, sans-serif; width: 280px; transition: border-color 140ms; } .ds-input::placeholder { color: oklch(0.47 0.022 225); } .ds-input:hover { border-color: oklch(0.55 0.091 210); } .ds-input:focus-visible { outline: 2px solid oklch(0.55 0.091 210); outline-offset: 2px; }"
+    },
+    {
+      "name": "Top Nav Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Pill-shaped nav link; teal-on-teal-soft when current.",
+      "html": "<nav class=\"ds-topnav\"><a class=\"ds-topnav-link is-active\" href=\"#\">Packages</a><a class=\"ds-topnav-link\" href=\"#\">Contractors</a><a class=\"ds-topnav-link\" href=\"#\">Checklists</a></nav>",
+      "css": ".ds-topnav { display: flex; gap: 4px; } .ds-topnav-link { padding: 6px 12px; border-radius: 8px; font: 400 0.875rem/1.55 Inter, system-ui, sans-serif; color: oklch(0.47 0.022 225); text-decoration: none; transition: color 140ms, background 140ms; } .ds-topnav-link:hover { color: oklch(0.235 0.018 230); background: oklch(0.972 0.004 220); } .ds-topnav-link.is-active { color: oklch(0.55 0.091 210); background: oklch(0.945 0.022 210); font-weight: 500; }"
+    },
+    {
+      "name": "File Chip",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Attached document chip — download affordance, tabular size, quiet remove.",
+      "html": "<span class=\"ds-file-chip\"><button class=\"ds-file-chip-name\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3\"/></svg><span>Site Plan.pdf</span><span class=\"ds-file-chip-size\">1.2 MB</span></button><button class=\"ds-file-chip-x\" aria-label=\"Remove\">&times;</button></span>",
+      "css": ".ds-file-chip { display: inline-flex; align-items: stretch; border: 1px solid oklch(0.885 0.008 220); border-radius: 999px; background: oklch(0.972 0.004 220); overflow: hidden; font-family: Inter, system-ui, sans-serif; } .ds-file-chip-name { display: inline-flex; align-items: center; gap: 5px; padding: 3px 4px 3px 10px; font-size: 0.75rem; color: oklch(0.235 0.018 230); background: none; border: none; cursor: pointer; transition: background 140ms, color 140ms; } .ds-file-chip-name:hover { color: oklch(0.55 0.091 210); background: oklch(0.945 0.022 210); } .ds-file-chip-size { color: oklch(0.60 0.018 225); font-variant-numeric: tabular-nums; } .ds-file-chip-x { border: none; background: none; padding: 0 8px 0 5px; color: oklch(0.60 0.018 225); cursor: pointer; font-size: 0.85rem; } .ds-file-chip-x:hover { color: oklch(0.52 0.16 25); background: oklch(0.955 0.025 25); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Resting work surface — hairline border, no shadow.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-h\">Document checklist</h3><p class=\"ds-card-p\">Hairline-bordered, flat at rest, 12px radius, 20px padding.</p></div>",
+      "css": ".ds-card { background: oklch(1 0 0); border: 1px solid oklch(0.885 0.008 220); border-radius: 12px; padding: 20px; max-width: 320px; font-family: Inter, system-ui, sans-serif; } .ds-card-h { margin: 0 0 8px; font-size: 1rem; font-weight: 600; color: oklch(0.235 0.018 230); } .ds-card-p { margin: 0; font-size: 0.875rem; line-height: 1.55; color: oklch(0.47 0.022 225); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ship's Chronometer at Dawn",
+    "overview": "Meridian is a precision instrument for permit expeditors: a tool that always knows exactly where things stand, and never looks anxious saying so. The system reads as cool steel-blue against pure white — the calm of a navigator's bench, not the noise of a SaaS dashboard. Information is dense but breathes; rows and lists carry the work, color carries meaning, and nothing decorates.",
+    "keyCharacteristics": [
+      "Pure white surface; brand lives in steel-teal primary and brass accent",
+      "List-led layouts, not card grids; density without noise",
+      "Status is always icon + label + color — never color alone",
+      "Fixed rem type scale (~1.125 ratio), one family (Inter), tabular numerals for data",
+      "Motion only conveys state: 140–200ms, ease-out, no choreography"
+    ],
+    "rules": [
+      { "name": "The Brass-Means-Deadline Rule", "body": "The brass accent appears only where time pressure exists — deadlines, overdue states, the attention strip. Brass on anything else is forbidden.", "section": "colors" },
+      { "name": "The Never-Color-Alone Rule", "body": "Status is always carried by icon + label + color together. A color-blind expeditor reads every screen at full fidelity.", "section": "colors" },
+      { "name": "The Tabular Number Rule", "body": "Every reference number, date, count, and file size uses tabular numerals. Data columns never wiggle.", "section": "typography" },
+      { "name": "The Hairline-Structure Rule", "body": "If you reach for a shadow to separate two resting surfaces, use a 1px border instead.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the body background exactly oklch(1 0 0) in light mode — warmth belongs to brass and copy, never the surface.",
+      "Do pair every status color with its icon and label (The Never-Color-Alone Rule).",
+      "Do use .tnum tabular numerals on every reference, date, count, and size.",
+      "Do keep transitions 140–200ms ease-out, state-conveying only, with the prefers-reduced-motion kill switch already in globals.",
+      "Do use list rows for collections of packages and contractors; cards only for the detail page's distinct work areas."
+    ],
+    "donts": [
+      "Don't drift toward the generic SaaS dashboard — interchangeable blue/white, sidebar nav, identical card grids.",
+      "Don't import construction-management-tool heaviness — Procore/Autodesk enterprise chrome.",
+      "Don't go overly minimal / cold — sterile whitespace deserts with no warmth.",
+      "Don't use side-stripe borders, gradient text, or glassmorphism — banned outright.",
+      "Don't put brass on anything that isn't a deadline or attention signal.",
+      "Don't add shadows to resting surfaces; reach for a hairline border instead."
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "permitpro-pms-e596b",
+    "production": "permitpro-pms-e596b"
+  },
+  "targets": {},
+  "etags": {}
+}

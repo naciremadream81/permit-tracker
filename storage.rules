@@ -1,0 +1,22 @@
+rules_version = '2';
+
+// Keep this email list in sync with firestore.rules.
+// Deploy: firebase deploy --only storage
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isTeamMember() {
+      return request.auth != null
+        && request.auth.token.email_verified
+        && request.auth.token.email in [
+          'sdswonger@gmail.com'
+          // , 'nancyarmstrong61@gmail.com'
+        ];
+    }
+
+    match /workspaces/main/files/{fileId} {
+      allow read, delete: if isTeamMember();
+      // 50 MB cap per document — adjust if your plan sets run larger.
+      allow write: if isTeamMember() && request.resource.size < 50 * 1024 * 1024;
+    }
+  }
+}
