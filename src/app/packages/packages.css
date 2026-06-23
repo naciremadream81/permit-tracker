@@ -1003,11 +1003,11 @@
     display: none;
   }
 
-  .pkg-split:has(.pkg-detail-panel > *) .pkg-list-panel {
+  .pkg-split:has(.pkg-detail-panel > :not(.pkg-detail-empty)) .pkg-list-panel {
     display: none;
   }
 
-  .pkg-split:has(.pkg-detail-panel > *) .pkg-detail-panel {
+  .pkg-split:has(.pkg-detail-panel > :not(.pkg-detail-empty)) .pkg-detail-panel {
     display: flex;
   }
 }
