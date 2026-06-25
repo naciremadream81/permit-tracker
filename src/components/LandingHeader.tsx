@@ -26,7 +26,7 @@ export function LandingHeader() {
   return (
     <header className="landing-header">
       <Link href="/" className="landing-brand">
-        <Compass size={22} strokeWidth={1.75} aria-hidden />
+        <Compass size={20} strokeWidth={1.75} aria-hidden />
         <span>Meridian</span>
       </Link>
       <nav className="landing-nav" aria-label="Landing">
@@ -39,7 +39,7 @@ export function LandingHeader() {
           onClick={toggleTheme}
           aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
         >
-          {dark ? <Sun size={17} aria-hidden /> : <Moon size={17} aria-hidden />}
+          {dark ? <Sun size={16} aria-hidden /> : <Moon size={16} aria-hidden />}
         </button>
         <LandingCta className="btn-primary btn-sm landing-header-cta" />
       </nav>
